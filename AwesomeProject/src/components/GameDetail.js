@@ -35,8 +35,9 @@ const GameDetail = ({ game }) => {
 
 const styles = {
   headerContentStyle: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start'
+    flexDirection: 'row'
+    // justifyContent: 'space-around'
+    // justifyContent: 'flex-start'
   },
   textStyle: {
     fontSize: 20,
@@ -50,7 +51,8 @@ const styles = {
   imageStyle: {
     height: 300,
     flex: 1,
-    width: null
+    width: null,
+    // resizeMode: 'contain'
   }
 };
 
