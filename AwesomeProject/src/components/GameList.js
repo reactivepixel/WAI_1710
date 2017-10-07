@@ -24,7 +24,7 @@ class GameList extends Component {
   }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
 
     return (
       <ScrollView>
