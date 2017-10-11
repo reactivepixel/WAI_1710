@@ -11,7 +11,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Header headerText={'TableTop Citadel'} />
-        <TopGameList />
+        <GameList />
       </View>
     );
   }

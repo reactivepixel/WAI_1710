@@ -6,15 +6,17 @@ import Button from './Button';
 
 // Passing this component to Card with {props.children}
 const TopGameDetail = ({ game }) => {
-  const { name, rank, thumbnail, yearPublished } = game;
+  const { name, rank, thumbnail, yearPublished, gameId } = game;
   const {
-    // thumbnailStyle,
+    thumbnailStyle,
     headerContentStyle,
     imageStyle,
     textStyle,
-    bumperStyle
+    bumperStyle,
+    contentStyle
   } = styles;
-  const url = 'http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + name + '+board+game&tag=tabletopcitad-20';
+  const urlAffiliate = 'http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + name + '+board+game&tag=tabletopcitad-20';
+  const urlDetail = 'https://boardgamegeek.com/boardgame/' + gameId;
   return (
     <Card>
 
@@ -22,25 +24,22 @@ const TopGameDetail = ({ game }) => {
       <Text style={textStyle}>{name}</Text>
     </CardSection>
 
-    <CardSection style={bumperStyle}>
+      <CardSection>
+        <Image
+          style={thumbnailStyle}
+          source={{ uri: thumbnail }}
+        />
         <View style={headerContentStyle}>
-          <Text>Rank: {rank}</Text>
-          <Text>Published: {yearPublished}</Text>
+          <Text style={contentStyle}>Rank: {rank}</Text>
+          <Text style={contentStyle}>Published: {yearPublished}</Text>
         </View>
       </CardSection>
 
       <CardSection>
-        <Image
-          style={imageStyle}
-          source={{ uri: thumbnail }}
-        />
-      </CardSection>
-
-      <CardSection>
-        <Button onPress={() => Linking.openURL()}>
+        <Button onPress={() => Linking.openURL(urlDetail)}>
           More Details
         </Button>
-        <Button onPress={() => Linking.openURL(url)}>
+        <Button onPress={() => Linking.openURL(urlAffiliate)}>
           Buy Now
         </Button>
       </CardSection>
@@ -52,11 +51,16 @@ const TopGameDetail = ({ game }) => {
 const styles = {
   headerContentStyle: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    marginLeft: 15,
+    flexDirection: 'column',
+    justifyContent: 'space-around'
   },
   textStyle: {
     fontSize: 20,
+    fontWeight: 'bold'
+  },
+  contentStyle: {
+    fontSize: 15,
     fontWeight: 'bold'
   },
   bumperStyle: {
