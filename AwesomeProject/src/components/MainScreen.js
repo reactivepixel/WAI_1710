@@ -8,7 +8,7 @@ const MainScreen = () => {
   return (
     <View>
       <MenuOption menuText={'What to play?'} />
-      <MenuOption menuText={'My Collection'} />
+      <MenuOption menuText={'My Collections'} />
       <MenuOption menuText={'Top Ranked Games'} />
       <MenuOption menuText={'What Gamer Am I?'} />
     </View>

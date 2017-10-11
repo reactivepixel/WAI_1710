@@ -19,6 +19,7 @@ const styles = {
     left: 0,
     right: 0,
     top: 0,
+    zIndex: 10,
     backgroundColor: '#f8f8f8',
     justifyContent: 'center',
     alignItems: 'center',
@@ -27,7 +28,7 @@ const styles = {
     paddingBottom: 15,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.2
   },
   textStyle: {
     fontSize: 20

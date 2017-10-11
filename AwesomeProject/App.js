@@ -6,15 +6,13 @@ import TopGameList from './src/components/TopGameList';
 import MainScreen from './src/components/MainScreen';
 
 
-
-
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Header headerText={'TableTop Citadel'} />
-        
-        <MainScreen />
+
+        <TopGameList />
 
       </View>
     );
@@ -31,7 +29,6 @@ const styles = {
 
 // Only 'root' gets AppRegistry everything else gets export
 AppRegistry.registerComponent('AwesomeProject', () => App);
-
 
 
         // <Header headerText={'Top Games'} />
