@@ -1,8 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, AppRegistry } from 'react-native';
 import Header from './src/components/Header';
 import GameList from './src/components/GameList';
 import TopGameList from './src/components/TopGameList';
+import MainScreen from './src/components/MainScreen';
+
 
 
 
@@ -11,7 +13,9 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Header headerText={'TableTop Citadel'} />
-        <GameList />
+        
+        <MainScreen />
+
       </View>
     );
   }
@@ -24,3 +28,14 @@ const styles = {
     justifyContent: 'center'
   }
 };
+
+// Only 'root' gets AppRegistry everything else gets export
+AppRegistry.registerComponent('AwesomeProject', () => App);
+
+
+
+        // <Header headerText={'Top Games'} />
+        // <TopGameList />
+        //
+        // <Header headerText={'Game Collection'} />
+        // <GameList />
