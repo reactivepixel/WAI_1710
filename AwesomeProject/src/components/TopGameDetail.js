@@ -5,8 +5,8 @@ import CardSection from './CardSection';
 import Button from './Button';
 
 // Passing this component to Card with {props.children}
-const GameDetail = ({ game }) => {
-  const { name, averageRating, minPlayers, maxPlayers, playingTime, image } = game;
+const TopGameDetail = ({ game }) => {
+  const { name, rank, thumbnail, yearPublished } = game;
   const {
     // thumbnailStyle,
     headerContentStyle,
@@ -24,16 +24,15 @@ const GameDetail = ({ game }) => {
 
     <CardSection style={bumperStyle}>
         <View style={headerContentStyle}>
-          <Text>Rating: {averageRating.toFixed(2)}</Text>
-          <Text>Players: {minPlayers}-{maxPlayers}</Text>
-          <Text>Time: {playingTime}</Text>
+          <Text>Rank: {rank}</Text>
+          <Text>Published: {yearPublished}</Text>
         </View>
       </CardSection>
 
       <CardSection>
         <Image
           style={imageStyle}
-          source={{ uri: image }}
+          source={{ uri: thumbnail }}
         />
       </CardSection>
 
@@ -77,7 +76,7 @@ const styles = {
   }
 };
 
-export default GameDetail;
+export default TopGameDetail;
 
 // <View>
 //   <Image

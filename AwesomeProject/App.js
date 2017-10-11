@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import Header from './src/components/Header';
 import GameList from './src/components/GameList';
+import TopGameList from './src/components/TopGameList';
 
 
 
@@ -10,7 +11,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Header headerText={'TableTop Citadel'} />
-        <GameList />
+        <TopGameList />
       </View>
     );
   }
@@ -23,10 +24,3 @@ const styles = {
     justifyContent: 'center'
   }
 };
-
-
-
-
-
-// // Render it to the device
-// AppRegistry.registerComponent('AwesomeProject', () => App);

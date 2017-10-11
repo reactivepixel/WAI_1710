@@ -4,11 +4,11 @@ import axios from 'axios';
 import GameDetail from './GameDetail';
 
 
-
 class GameList extends Component {
   // Class level property...
   state = { games: [] };
-
+// http://boardgamegeek.com/xmlapi/collection/allnations21?own=1
+// https://bgg-json.azurewebsites.net/collection/allnations21?own=0
   componentWillMount() {
     // Component state lives in here...
     axios.get('https://bgg-json.azurewebsites.net/collection/allnations21')
@@ -20,7 +20,8 @@ class GameList extends Component {
     return this.state.games.map(game =>
       // Pass down game as prop to GameDetail
       //(name of variable does not need to be same as prop name could be data={game})
-      <GameDetail key={game.gameId} game={game} />);
+      <GameDetail key={game.gameId} game={game} />
+    );
   }
 
   render() {
@@ -33,6 +34,5 @@ class GameList extends Component {
     );
   }
 }
-
 
 export default GameList;
