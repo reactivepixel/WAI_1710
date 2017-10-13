@@ -15,11 +15,10 @@ const Header = (props) => {
 
 const styles = {
   viewStyle: {
-    position: 'absolute',
+    position: 'relative',
     left: 0,
     right: 0,
     top: 0,
-    zIndex: 10,
     backgroundColor: '#f8f8f8',
     justifyContent: 'center',
     alignItems: 'center',

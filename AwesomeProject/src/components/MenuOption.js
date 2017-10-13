@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Card from './Card';
 
 
@@ -9,9 +9,11 @@ const MenuOption = (props) => {
 
   return (
     <Card>
-    <View style={viewStyle}>
+    <TouchableOpacity>
+      <View style={viewStyle}>
         <Text style={textStyle}>{props.menuText}</Text>
-    </View>
+      </View>
+    </TouchableOpacity>
     </Card>
   );
 };
@@ -31,7 +33,8 @@ const styles = {
     position: 'relative'
   },
   textStyle: {
-    fontSize: 20
+    fontSize: 20,
+    marginBottom: 25
 
   }
 };

@@ -12,7 +12,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Header headerText={'TableTop Citadel'} />
 
-        <TopGameList />
+        <MainScreen />
 
       </View>
     );

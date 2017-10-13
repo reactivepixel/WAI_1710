@@ -4,7 +4,6 @@ import MenuOption from './MenuOption';
 
 
 const MainScreen = () => {
-
   return (
     <View>
       <MenuOption menuText={'What to play?'} />

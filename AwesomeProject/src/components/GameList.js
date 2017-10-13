@@ -11,7 +11,7 @@ class GameList extends Component {
 // https://bgg-json.azurewebsites.net/collection/allnations21?own=0
   componentWillMount() {
     // Component state lives in here...
-    axios.get('https://bgg-json.azurewebsites.net/collection/allnations21')
+    axios.get('https://bgg-json.azurewebsites.net/collection/mindtour?owned=1')
       .then(response => this.setState({ games: response.data }));
   }
 
