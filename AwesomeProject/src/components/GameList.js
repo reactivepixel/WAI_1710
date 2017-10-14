@@ -4,14 +4,13 @@ import axios from 'axios';
 import GameDetail from './GameDetail';
 
 
-class GameList extends Component {
+export default class GameList extends Component {
+  // Bring in constructor if props need to be passed (look into)
   // Class level property...
   state = { games: [] };
-// http://boardgamegeek.com/xmlapi/collection/allnations21?own=1
-// https://bgg-json.azurewebsites.net/collection/allnations21?own=0
   componentWillMount() {
     // Component state lives in here...
-    axios.get('https://bgg-json.azurewebsites.net/collection/mindtour?owned=1')
+    axios.get('https://bgg-json.azurewebsites.net/collection/allnations21')
       .then(response => this.setState({ games: response.data }));
   }
 
@@ -35,4 +34,5 @@ class GameList extends Component {
   }
 }
 
-export default GameList;
+// redux store connect will require export here
+// export default GameList;

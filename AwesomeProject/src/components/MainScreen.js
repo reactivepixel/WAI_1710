@@ -15,3 +15,5 @@ const MainScreen = () => {
 };
 
 export default MainScreen;
+
+// menu screen "bilboard" slider

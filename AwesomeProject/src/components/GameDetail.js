@@ -85,10 +85,3 @@ const styles = {
 };
 
 export default GameDetail;
-
-// <View>
-//   <Image
-//     style={thumbnailStyle}
-//     source={{ uri: image }}
-//   />
-// </View>
