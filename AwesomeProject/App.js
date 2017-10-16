@@ -12,7 +12,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <Header headerText={'TableTop Citadel'} />
 
-        <TopGameList />
+        <GameList />
 
       </View>
     );

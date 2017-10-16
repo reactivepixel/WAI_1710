@@ -9,7 +9,6 @@ const MainScreen = () => {
       <MenuOption menuText={'What to play?'} />
       <MenuOption menuText={'My Collections'} />
       <MenuOption menuText={'Top Ranked Games'} />
-      <MenuOption menuText={'What Gamer Am I?'} />
     </View>
   );
 };
@@ -17,3 +16,5 @@ const MainScreen = () => {
 export default MainScreen;
 
 // menu screen "bilboard" slider
+
+// <MenuOption menuText={'What Gamer Am I?'} />
