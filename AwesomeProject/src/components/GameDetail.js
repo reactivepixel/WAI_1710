@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, Image, Linking, WebView } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
+import BuyButton from './BuyButton';
 
 // Passing this component to Card with {props.children}
 const GameDetail = ({ game }) => {
@@ -14,6 +15,7 @@ const GameDetail = ({ game }) => {
     textStyle,
     contentStyle,
     bumperStyle,
+    container,
     // buttonBuyTextStyle,
     // buttonBuyStyle
   } = styles;
@@ -21,6 +23,8 @@ const GameDetail = ({ game }) => {
   const urlDetail = 'https://boardgamegeek.com/boardgame/' + gameId;
 
   return (
+    <View style={styles.container}>
+
     <Card>
 
     <CardSection>
@@ -46,25 +50,22 @@ const GameDetail = ({ game }) => {
         <Button onPress={() => Linking.openURL(urlDetail)}>
           More Details
         </Button>
-        <Button
-          // style={[buttonBuyTextStyle, buttonBuyStyle]}
-          onPress={() => Linking.openURL(urlAffiliate)}
-        >
+        <BuyButton onPress={() => Linking.openURL(urlAffiliate)}>
           Buy Now
-        </Button>
+        </BuyButton>
       </CardSection>
-
     </Card>
+    </View>
   );
 };
 
 const styles = {
-  // buttonBuyTextStyle: {
-  //   color: '#30FC49',
-  // },
-  // buttonBuyStyle: {
-  //   borderColor: '#30FC49',
-  // },
+  container: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: 'rgba(249, 249, 249, .6)',
+  },
   headerContentStyle: {
     flex: 1,
     flexDirection: 'row',

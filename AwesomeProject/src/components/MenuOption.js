@@ -18,7 +18,8 @@ const MenuOption = (props) => {
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#f8f8f8',
+    backgroundColor: 'rgba(248, 248, 248, .8)',
+    borderRadius: 1,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, Image } from 'react-native';
 import MenuOption from './MenuOption';
 
 
 const MainScreen = (props) => {
 
   return (
-    <View style={styles.container}>
+    <Image source={require('./img/LettersFromWhitechapel.jpg')} style={styles.container}>
       <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
         <MenuOption menuText={'What to play?'} />
       </TouchableOpacity>
@@ -16,13 +16,16 @@ const MainScreen = (props) => {
       <TouchableOpacity onPress={() => props.navigation.navigate('Ranked')}>
         <MenuOption menuText={'Top Ranked Games'} />
       </TouchableOpacity>
-    </View>
+    </Image>
+
   );
 };
 
 const styles = {
   container: {
     flex: 1,
+    width: null,
+    height: null,
     backgroundColor: 'rgba(248, 248, 248, .7)',
   }
 };

@@ -3,6 +3,8 @@ import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
+import BuyButton from './BuyButton';
+
 
 // Passing this component to Card with {props.children}
 const TopGameDetail = ({ game }) => {
@@ -18,6 +20,8 @@ const TopGameDetail = ({ game }) => {
   const urlAffiliate = 'http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + name + '+board+game&tag=tabletopcitad-20';
   const urlDetail = 'https://boardgamegeek.com/boardgame/' + gameId;
   return (
+    <View style={styles.container}>
+
     <Card>
 
     <CardSection>
@@ -39,16 +43,23 @@ const TopGameDetail = ({ game }) => {
         <Button onPress={() => Linking.openURL(urlDetail)}>
           More Details
         </Button>
-        <Button color='#30FC49' onPress={() => Linking.openURL(urlAffiliate)}>
+        <BuyButton color='#30FC49' onPress={() => Linking.openURL(urlAffiliate)}>
           Buy Now
-        </Button>
+        </BuyButton>
       </CardSection>
 
     </Card>
+    </View>
   );
 };
 
 const styles = {
+  container: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: 'rgba(249, 249, 249, .6)',
+  },
   headerContentStyle: {
     flex: 1,
     marginLeft: 15,
