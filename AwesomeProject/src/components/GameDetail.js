@@ -13,7 +13,9 @@ const GameDetail = ({ game }) => {
     imageStyle,
     textStyle,
     contentStyle,
-    bumperStyle
+    bumperStyle,
+    // buttonBuyTextStyle,
+    // buttonBuyStyle
   } = styles;
   const urlAffiliate = 'http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + name + '+board+game&tag=tabletopcitad-20';
   const urlDetail = 'https://boardgamegeek.com/boardgame/' + gameId;
@@ -44,7 +46,10 @@ const GameDetail = ({ game }) => {
         <Button onPress={() => Linking.openURL(urlDetail)}>
           More Details
         </Button>
-        <Button onPress={() => Linking.openURL(urlAffiliate)}>
+        <Button
+          // style={[buttonBuyTextStyle, buttonBuyStyle]}
+          onPress={() => Linking.openURL(urlAffiliate)}
+        >
           Buy Now
         </Button>
       </CardSection>
@@ -54,6 +59,12 @@ const GameDetail = ({ game }) => {
 };
 
 const styles = {
+  // buttonBuyTextStyle: {
+  //   color: '#30FC49',
+  // },
+  // buttonBuyStyle: {
+  //   borderColor: '#30FC49',
+  // },
   headerContentStyle: {
     flex: 1,
     flexDirection: 'row',

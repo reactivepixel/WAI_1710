@@ -16,6 +16,7 @@ export default class HomeScreen extends React.Component {
           onPress={() => navigate('Chat', { user: 'Lucy' })}
           title="Chat with Lucy"
         />
+
       </View>
     );
   }
