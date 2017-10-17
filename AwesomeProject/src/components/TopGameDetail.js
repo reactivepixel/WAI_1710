@@ -39,7 +39,7 @@ const TopGameDetail = ({ game }) => {
         <Button onPress={() => Linking.openURL(urlDetail)}>
           More Details
         </Button>
-        <Button onPress={() => Linking.openURL(urlAffiliate)}>
+        <Button color='#30FC49' onPress={() => Linking.openURL(urlAffiliate)}>
           Buy Now
         </Button>
       </CardSection>

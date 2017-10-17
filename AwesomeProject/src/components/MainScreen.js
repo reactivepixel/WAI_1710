@@ -7,7 +7,6 @@ const MainScreen = (props) => {
 
   return (
     <View style={styles.container}>
-      {console.log(props)}
       <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
         <MenuOption menuText={'What to play?'} />
       </TouchableOpacity>
@@ -24,7 +23,7 @@ const MainScreen = (props) => {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: 'rgba(206, 220, 233, .3)',
+    backgroundColor: 'rgba(248, 248, 248, .7)',
   }
 };
 

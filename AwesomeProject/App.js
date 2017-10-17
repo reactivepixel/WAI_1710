@@ -1,9 +1,6 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-// import Header from './src/components/Header';
-// import AppNav from './src/components/AppNav';
-
 
 import GameList from './src/components/GameList';
 import TopGameList from './src/components/TopGameList';
