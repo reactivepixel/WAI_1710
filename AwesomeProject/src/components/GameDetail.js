@@ -15,11 +15,11 @@ const GameDetail = ({ game }) => {
     textStyle,
     contentStyle,
     bumperStyle,
-    container,
+    // container,
     // buttonBuyTextStyle,
     // buttonBuyStyle
   } = styles;
-  const urlAffiliate = 'http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + name + '+board+game&tag=tabletopcitad-20';
+  // const urlAffiliate = 'http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + name + '+board+game&tag=tabletopcitad-20';
   const urlDetail = 'https://boardgamegeek.com/boardgame/' + gameId;
 
   return (
@@ -50,10 +50,8 @@ const GameDetail = ({ game }) => {
         <Button onPress={() => Linking.openURL(urlDetail)}>
           More Details
         </Button>
-        <BuyButton onPress={() => Linking.openURL(urlAffiliate)}>
-          Buy Now
-        </BuyButton>
       </CardSection>
+
     </Card>
     </View>
   );

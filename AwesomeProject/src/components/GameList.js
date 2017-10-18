@@ -9,9 +9,23 @@ export default class GameList extends Component {
   // Class level property...
   state = { games: [] };
   componentWillMount() {
-    // Component state lives in here...
     axios.get('https://bgg-json.azurewebsites.net/collection/allnations21')
-      .then(response => this.setState({ games: response.data }));
+      .then((response) => {
+        let gameOwned = [];
+
+        response.data.forEach((foo) => {
+          if (foo.owned === true) {
+            gameOwned.push(foo);
+          }
+        });
+
+        // console.log(gameOwned);
+
+          this.setState({ games: gameOwned });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   // loop through all the data
