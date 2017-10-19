@@ -15,7 +15,8 @@ export default class RandomPlayList extends Component {
         const randomOrder = [];
 
         response.data.forEach((foo) => {
-          if (foo.owned === true) {
+          // Only games that are both owned and not expansions are set
+          if (foo.owned === true && foo.isExpansion === false) {
             gameOwned.push(foo);
           }
         });
@@ -28,11 +29,6 @@ export default class RandomPlayList extends Component {
             } else if (!randomOrder.includes(rndmGame)) {
               randomOrder.push(rndmGame);
             }
-            // randomOrder.push(rndmGame);
-            // gameOwned.splice(rndmGame);
-            // this.setState({ games: gameOwned });
-            // console.log(rndmGame);
-            // console.log(rndmGame.gameId);
           }
           this.setState({ games: [...randomOrder] });
           console.log(...randomOrder);
