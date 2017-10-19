@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-
+import RandomPlayList from './src/components/RandomPlayList'
 import GameList from './src/components/GameList';
 import TopGameList from './src/components/TopGameList';
 import MainScreen from './src/components/MainScreen';
@@ -15,6 +15,9 @@ const AppNav = StackNavigator({
   },
   Ranked: { screen: TopGameList,
             navigationOptions: { title: 'Top Ranked' }
+  },
+  Random: { screen: RandomPlayList,
+            navigationOptions: { title: 'What to Play?' }
   },
 });
 

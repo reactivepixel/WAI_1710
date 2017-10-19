@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import axios from 'axios';
-// import GameDetail from './GameDetail';
+import RandomPlayDetail from './RandomPlayDetail';
 
 
-export default class RandomPlay extends Component {
+export default class RandomPlayList extends Component {
   // Bring in constructor if props need to be passed (look into)
   // Class level property...
   state = { games: [] };
   componentWillMount() {
     axios.get('https://bgg-json.azurewebsites.net/collection/allnations21')
       .then((response) => {
-        let gameOwned = [];
+        const gameOwned = [];
+        const RandomOrder = [];
 
         response.data.forEach((foo) => {
           if (foo.owned === true) {
@@ -20,6 +21,11 @@ export default class RandomPlay extends Component {
         });
         // console.log(gameOwned);
           this.setState({ games: gameOwned });
+          for (let i = 0; i < 5; i++) {
+            RandomOrder.push(gameOwned[Math.floor(Math.random() * gameOwned.length)]);
+          }
+          this.setState({ games: RandomOrder });
+          console.log(RandomOrder);
       })
       .catch((error) => {
         console.log(error);
@@ -47,4 +53,4 @@ export default class RandomPlay extends Component {
 }
 
 // redux store connect will require export here
-// export default RandomPlay;
+// export default RandomPlayList;

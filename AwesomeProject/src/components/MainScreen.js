@@ -7,7 +7,7 @@ const MainScreen = (props) => {
 
   return (
     <Image source={require('./img/LettersFromWhitechapel.jpg')} style={styles.container}>
-      <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('Random')}>
         <MenuOption menuText={'What to play?'} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => props.navigation.navigate('Collection')}>
