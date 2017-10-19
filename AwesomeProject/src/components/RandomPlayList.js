@@ -12,7 +12,7 @@ export default class RandomPlayList extends Component {
     axios.get('https://bgg-json.azurewebsites.net/collection/allnations21')
       .then((response) => {
         const gameOwned = [];
-        const RandomOrder = [];
+        const randomOrder = [];
 
         response.data.forEach((foo) => {
           if (foo.owned === true) {
@@ -22,10 +22,20 @@ export default class RandomPlayList extends Component {
         // console.log(gameOwned);
           this.setState({ games: gameOwned });
           for (let i = 0; i < 5; i++) {
-            RandomOrder.push(gameOwned[Math.floor(Math.random() * gameOwned.length)]);
+            const rndmGame = gameOwned[Math.floor(Math.random() * gameOwned.length)];
+            if (randomOrder.includes(rndmGame)) {
+              i--;
+            } else if (!randomOrder.includes(rndmGame)) {
+              randomOrder.push(rndmGame);
+            }
+            // randomOrder.push(rndmGame);
+            // gameOwned.splice(rndmGame);
+            // this.setState({ games: gameOwned });
+            // console.log(rndmGame);
+            // console.log(rndmGame.gameId);
           }
-          this.setState({ games: RandomOrder });
-          console.log(RandomOrder);
+          this.setState({ games: [...randomOrder] });
+          console.log(...randomOrder);
       })
       .catch((error) => {
         console.log(error);
